@@ -7,7 +7,6 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "public")));
 
 const myInfo = {
   full_name: "hardik_agrawal",
@@ -248,8 +247,14 @@ app.get("/bfhl", (req, res) => {
   res.json({ operation_code: 1 });
 });
 
-app.get("/{*path}", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+app.get("/", (req, res) => {
+  res.send(`
+    <div style="font-family: system-ui, sans-serif; padding: 40px; text-align: center;">
+      <h1 style="color: #005eb8;">BFHL Backend API is Live 🚀</h1>
+      <p>This URL handles the BFHL graph processing requests. It intentionally does not display the User Interface.</p>
+      <p>Direct POST requests to <code>/bfhl</code>.</p>
+    </div>
+  `);
 });
 
 app.listen(PORT, () => {

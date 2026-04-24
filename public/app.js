@@ -1,4 +1,4 @@
-const API_BASE_URL = "";
+const API_BASE_URL = "https://hardik-agrawal-submission.onrender.com/";
 
 const sampleEdges = [
   "A->B", "A->C", "B->D", "C->E", "E->F",
@@ -174,12 +174,12 @@ function buildTreeCards(hierarchies) {
           </div>
           <div class="hierarchy-badges">
             ${isCycle
-              ? `<span class="cycle-badge">
+        ? `<span class="cycle-badge">
                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                    CYCLE
                  </span>`
-              : `<span class="depth-badge">Depth: ${h.depth}</span>`
-            }
+        : `<span class="depth-badge">Depth: ${h.depth}</span>`
+      }
           </div>
         </div>
         <div class="hierarchy-body">
@@ -246,9 +246,9 @@ function buildIssueCards(badList, dupList) {
       </div>
       <div class="issue-body">
         ${hasBad
-          ? `<ul class="issue-list">${badList.map(e => `<li class="issue-chip">${safeText(e || '""')}</li>`).join("")}</ul>`
-          : `<span class="issue-empty">No invalid entries found</span>`
-        }
+      ? `<ul class="issue-list">${badList.map(e => `<li class="issue-chip">${safeText(e || '""')}</li>`).join("")}</ul>`
+      : `<span class="issue-empty">No invalid entries found</span>`
+    }
       </div>
     </div>
     <div class="issue-card duplicate">
@@ -261,9 +261,9 @@ function buildIssueCards(badList, dupList) {
       </div>
       <div class="issue-body">
         ${hasDup
-          ? `<ul class="issue-list">${dupList.map(e => `<li class="issue-chip">${safeText(e)}</li>`).join("")}</ul>`
-          : `<span class="issue-empty">No duplicate edges found</span>`
-        }
+      ? `<ul class="issue-list">${dupList.map(e => `<li class="issue-chip">${safeText(e)}</li>`).join("")}</ul>`
+      : `<span class="issue-empty">No duplicate edges found</span>`
+    }
       </div>
     </div>
   `;
