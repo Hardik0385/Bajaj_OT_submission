@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://hardik-agrawal-submission.onrender.com/";
+const API_BASE_URL = "";
 
 const sampleEdges = [
   "A->B", "A->C", "B->D", "C->E", "E->F",
